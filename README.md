@@ -1,6 +1,6 @@
 # Hi, I'm Jubayer 👋
 
-🏠 Based in Bangladesh · Full Stack Developer & Technical Project Manager \
+🏠 Based in Bangladesh · Full Stack Developer & Technical Project Manager
 
 💼 Open for freelance — [Upwork](https://www.upwork.com/freelancers/~018c483215845eea8b) | [Portfolio](https://jubayerarefin.info/)
 
@@ -11,7 +11,7 @@
 **Backend:** PHP · Laravel · C# · NodeJS · Python \
 **Frontend:** React · Inertia · Tailwind CSS \
 **Database:** PostgreSQL · MySQL · MariaDB · Redis \
-**DevOps:** Docker · GitHub Actions · Linux · AWS · DigitalOcean · Azure · GCP \
+**DevOps:** Docker · GitHub Actions · Linux · AWS · DigitalOcean · Azure · GCP
 
 ---
 
