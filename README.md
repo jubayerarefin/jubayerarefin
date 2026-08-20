@@ -34,10 +34,10 @@
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=jubayerarefin&show_icons=true&theme=radical&hide_border=true" alt="GitHub Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=jubayerarefin&layout=compact&theme=radical&hide_border=true&langs_count=8" alt="Top Languages" />
+  <img src="public/stats-card.svg" alt="GitHub Stats" />
+  <img src="public/top-langs.svg" alt="Top Languages" />
 </p>
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=jubayerarefin&theme=radical&row=1" alt="GitHub Trophy" />
+  <img src="public/trophy.svg" alt="GitHub Trophy" />
 </p>
