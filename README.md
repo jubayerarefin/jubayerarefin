@@ -23,7 +23,7 @@
 
 ## 📫 Connect With Me
 
-[LinkedIn](https://linkedin.com/in/jubayerarefin) · [Portfolio](https://jubayerarefin.info/) · [Upwork](https://www.upwork.com/freelancers/~018c483215845eea8b)
+[LinkedIn](https://linkedin.com/in/jubayer-arefin) · [Portfolio](https://jubayerarefin.info/) · [Upwork](https://www.upwork.com/freelancers/~018c483215845eea8b)
 
 ---
 
