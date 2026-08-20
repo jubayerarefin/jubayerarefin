@@ -30,7 +30,7 @@ jobs:
           cache_seconds: 86400
 
       - name: Generate top languages card
-        uses: stats-organization/github-stats-extended@2.1.5
+        uses: stats-organization/github-stats-extended@v2.1.5
         with:
           username: jubayerarefin
           output_file: public/top-langs.svg
