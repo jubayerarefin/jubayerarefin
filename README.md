@@ -16,8 +16,8 @@
 
 ## 🔥 Currently Working On
 
-- Cloning and building modern web apps with Laravel + Inertia
-- Exploring AI/ML tooling and MLOps workflows
+- Building modern web apps with Laravel
+- Exploring AI/ML tooling and AI workflows
 
 ---
 
