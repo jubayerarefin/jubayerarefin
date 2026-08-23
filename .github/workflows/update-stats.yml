@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Update GitHub Stats
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v4
 
       - name: Generate stats card
         uses: stats-organization/github-readme-stats-action@v2
@@ -22,7 +22,7 @@ jobs:
           card: stats
           options: "username=jubayerarefin&theme=radical&hide=ratings,icons&hide_border=true&title_color=f8967c&text_color=e6e9e8&bg_color=0d1117&icon_color=f8967c&line_height=27&cache_seconds=86400"
           path: public/stats-card.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ACTION_TOKEN }}
 
       - name: Generate top languages card
         uses: stats-organization/github-readme-stats-action@v2
@@ -30,14 +30,14 @@ jobs:
           card: top-langs
           options: "username=jubayerarefin&theme=radical&layout=compact&hide_border=true&title_color=f8967c&text_color=e6e9e8&bg_color=0d1117&langs_count=8&cache_seconds=86400"
           path: public/top-langs.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ACTION_TOKEN }}
 
       - name: Generate trophy
         uses: ryo-ma/github-profile-trophy@v1.0
         with:
           username: jubayerarefin
           output_path: public/trophy.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ACTION_TOKEN }}
           theme: radical
 
       - name: Commit and push changes
