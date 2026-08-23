@@ -6,45 +6,54 @@ on:
     - cron: '0 0 * * *'
   workflow_dispatch:  # Allow manual trigger
 
+permissions:
+  contents: write
+
 jobs:
   update-stats:
     runs-on: ubuntu-latest
     name: Update GitHub Stats
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
 
       - name: Generate stats card
-        uses: stats-organization/github-readme-stats-action@v2
-        with:
-          username: jubayerarefin
-          output_file: public/stats-card.svg
-          theme: radical
-          hide: ratings,icons
-          show_icons: true
-          hide_border: true
-          title_color: f8967c
-          text_color: e6e9e8
-          bg_color: 0d1117
-          icon_color: f8967c
-          line_height: 27
-          cache_seconds: 86400
+        run: |
+          mkdir -p public
+          npx -y github-readme-stats \
+            --username jubayerarefin \
+            --theme radical \
+            --hide "ratings,icons" \
+            --hide_border \
+            --title_color f8967c \
+            --text_color e6e9e8 \
+            --bg_color 0d1117 \
+            --icon_color f8967c \
+            --line_height 27 \
+            --cache_seconds 86400 \
+            > public/stats-card.svg
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate top languages card
-        uses: stats-organization/github-readme-stats-action@v2
-        with:
-          username: jubayerarefin
-          output_file: public/top-langs.svg
-          theme: radical
-          layout: compact
-          hide_border: true
-          title_color: f8967c
-          text_color: e6e9e8
-          bg_color: 0d1117
-          langs_count: 8
-          cache_seconds: 86400
+        run: |
+          mkdir -p public
+          npx -y github-readme-stats \
+            --type topLanguages \
+            --username jubayerarefin \
+            --theme radical \
+            --layout compact \
+            --hide_border \
+            --title_color f8967c \
+            --text_color e6e9e8 \
+            --bg_color 0d1117 \
+            --langs_count 8 \
+            --cache_seconds 86400 \
+            > public/top-langs.svg
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate trophy
-        uses: ryo-ma/github-profile-trophy@v1.0
+        uses: ryo-ma/github-profile-trophy@master
         with:
           username: jubayerarefin
           output_file: public/trophy.svg
@@ -52,15 +61,11 @@ jobs:
           row: 1
           cache_seconds: 86400
 
-      - name: Commit changes
+      - name: Commit and push changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git fetch origin master
           git add public/*.svg
-          git diff --staged --quiet || git commit -m "Update GitHub stats [skip ci]"
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: master
+          git diff --staged --quiet || git commit -m "chore: update GitHub stats [skip ci]"
+          git push origin master
